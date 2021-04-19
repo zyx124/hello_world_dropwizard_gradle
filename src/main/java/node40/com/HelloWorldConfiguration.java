@@ -11,6 +11,8 @@ public class HelloWorldConfiguration extends Configuration {
     @NotEmpty
     private String defaultName = "Stranger";
 
+    private Boolean defaultReverse = false;
+
     @JsonProperty
     public String getTemplate() {
         return template;
@@ -29,5 +31,15 @@ public class HelloWorldConfiguration extends Configuration {
     @JsonProperty
     public void setDefaultName(String name) {
         this.defaultName = name;
+    }
+
+    @JsonProperty
+    public Boolean getDefaultReverse() {
+        return defaultReverse;
+    }
+
+    @JsonProperty
+    public void setDefaultReverse(Boolean defaultReverse) {
+        this.defaultReverse = defaultReverse;
     }
 }
