@@ -1,0 +1,35 @@
+plugins {
+    id "com.github.johnrengelman.shadow" version "6.1.0"
+    id "java"
+
+}
+
+group = 'node40.com.helloworld'
+version = '0.0.1-SNAPSHOT'
+description = 'hello-world'
+java.sourceCompatibility = JavaVersion.VERSION_1_8
+
+jar {
+  manifest {
+    attributes(
+      'Main-Class': 'node40.com.HelloWorldApplication'
+    )
+  }
+}
+
+shadowJar {
+    destinationDir  = file("$rootDir/example")
+    archiveClassifier = ''
+//    mergeServiceFiles()
+}
+
+repositories {    
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'io.dropwizard:dropwizard-core:2.0.18'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+}
+
+build.dependsOn shadowJar
