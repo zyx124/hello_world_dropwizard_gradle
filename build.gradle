@@ -8,6 +8,7 @@ group = 'node40.com.helloworld'
 version = '0.0.1-SNAPSHOT'
 description = 'hello-world'
 java.sourceCompatibility = JavaVersion.VERSION_1_8
+//archivesBaseName = "hello-world"
 
 jar {
   manifest {
@@ -15,12 +16,15 @@ jar {
       'Main-Class': 'node40.com.HelloWorldApplication'
     )
   }
+
 }
 
 shadowJar {
-    destinationDir  = file("$rootDir/example")
-    archiveClassifier = ''
+    destinationDirectory  = file("$rootDir/example")
+    archiveBaseName.set('hello-world')
+    archiveClassifier.set('')
 //    mergeServiceFiles()
+
 }
 
 repositories {    
