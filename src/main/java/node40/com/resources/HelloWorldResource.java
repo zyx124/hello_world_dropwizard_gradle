@@ -16,11 +16,9 @@ import java.util.concurrent.atomic.AtomicLong;
 public class HelloWorldResource {
     private final String template;
     private final AtomicLong counter;
-    private final Boolean defaultReverse;
 
-    public HelloWorldResource(String template, Boolean defaultReverse) {
+    public HelloWorldResource(String template) {
         this.template = template;
-        this.defaultReverse = defaultReverse;
         this.counter = new AtomicLong();
 
     }
